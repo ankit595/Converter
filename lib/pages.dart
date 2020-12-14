@@ -58,7 +58,7 @@ class _contactState extends State<contact> {
                     IconButton(
                         icon: Icon(MdiIcons.link),
                         onPressed: ()async{
-                          const url = 'https://www.dscrecbijnor.com';
+                          const url = 'https://dscrecbijnor.com/';
                           if (await canLaunch(url)){
                             await launch(url);
                           }
