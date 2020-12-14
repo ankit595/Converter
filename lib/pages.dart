@@ -38,7 +38,7 @@ class _contactState extends State<contact> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Text("Playstore :",style: TextStyle(fontSize: 16),),
+                    Text("Playstore :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                     IconButton(
                         icon: Image(image: AssetImage("assets/playstore.jpg")),
                         onPressed: ()async{
@@ -54,11 +54,11 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Visit Our Website :",style: TextStyle(fontSize: 16),),
+                    Text("Visit Our Website :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                     IconButton(
                         icon: Icon(MdiIcons.link),
                         onPressed: ()async{
-                          const url = 'https://dscrecbijnor.com/';
+                          const url = 'http://dscrecbijnor.com/';
                           if (await canLaunch(url)){
                             await launch(url);
                           }
@@ -86,7 +86,7 @@ class _contactState extends State<contact> {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Text("BlogSpot   :",style: TextStyle(fontSize: 16),),
+                    Text("BlogSpot   :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                     IconButton(
                         icon: Icon(MdiIcons.blogger,color: Colors.deepOrange[300],),
                         onPressed: ()async{
@@ -102,7 +102,7 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Instagram :",style: TextStyle(fontSize: 16),),
+                    Text("Instagram :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                     IconButton(
                         icon: Icon(MdiIcons.instagram,color: Colors.pink[500],),
                         onPressed: ()async{
@@ -118,7 +118,7 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Twitter       :",style: TextStyle(fontSize: 16),),
+                    Text("Twitter       :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                     IconButton(
                         icon: Icon(MdiIcons.twitter,color: Colors.lightBlue,),
                         onPressed: ()async{
@@ -134,7 +134,7 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Facebook  :",style: TextStyle(fontSize: 16),),
+                    Text("Facebook  :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                     IconButton(
                         icon: Icon(MdiIcons.facebook,color: Colors.indigo,),
                         onPressed: ()async{
@@ -245,15 +245,15 @@ class _contactmeState extends State<contactme> {
                   ),),
                   subtitle: Text("     Ankit Kumar\n     IT, 2nd Year\n     Rajkiya Engineering College,Bijnor\n",
                     style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black
+                        fontSize: 15,
+                        color: Colors.black54
                     ),),
                   enabled: false,
               ),
             ),
             Row(
               children: <Widget>[
-                Text("           Github Profile :",style: TextStyle(fontSize: 16),),
+                Text("           Github Profile :",style: TextStyle(fontSize: 16,color: Colors.black54),),
                 IconButton(
                   icon: Icon(MdiIcons.github,size: 25,),
                   onPressed: ()async{
