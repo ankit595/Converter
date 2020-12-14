@@ -32,22 +32,44 @@ class _contactState extends State<contact> {
           ),
           Container(
             padding: EdgeInsets.only(left: 20),
-            child: Row(
+            decoration: BoxDecoration(border: Border.all(color: Colors.black26,
+                width: 1)),
+            child: Column(
               children: <Widget>[
-                Text("Playstore :",style: TextStyle(fontSize: 18),),
-                IconButton(
-                    icon: Image(image: AssetImage("assets/playstore.jpg")),
-                    onPressed: ()async{
-                      const url = 'https://play.google.com/store/apps/details?id=com.feelthecoder.dsc';
-                      if (await canLaunch(url)){
-                        await launch(url);
-                      }
-                      else{
-                        throw 'Could not launch $url';
-                      }
-                    })
+                Row(
+                  children: <Widget>[
+                    Text("Playstore :",style: TextStyle(fontSize: 16),),
+                    IconButton(
+                        icon: Image(image: AssetImage("assets/playstore.jpg")),
+                        onPressed: ()async{
+                          const url = 'https://play.google.com/store/apps/details?id=com.feelthecoder.dsc';
+                          if (await canLaunch(url)){
+                            await launch(url);
+                          }
+                          else{
+                            throw 'Could not launch $url';
+                          }
+                        })
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Text("Visit Our Website :",style: TextStyle(fontSize: 16),),
+                    IconButton(
+                        icon: Icon(MdiIcons.link),
+                        onPressed: ()async{
+                          const url = 'https://www.dscrecbijnor.com';
+                          if (await canLaunch(url)){
+                            await launch(url);
+                          }
+                          else{
+                            throw 'Could not launch $url';
+                          }
+                        })
+                  ],
+                ),
               ],
-            ),
+            )
           ),
           Container(
             padding: const EdgeInsets.all(17),
@@ -58,11 +80,13 @@ class _contactState extends State<contact> {
           ),
           Container(
             padding: EdgeInsets.only(left: 20),
+            decoration: BoxDecoration(border: Border.all(color: Colors.black26,
+            width: 1)),
             child: Column(
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Text("BlogSpot :",style: TextStyle(fontSize: 18),),
+                    Text("BlogSpot   :",style: TextStyle(fontSize: 16),),
                     IconButton(
                         icon: Icon(MdiIcons.blogger,color: Colors.deepOrange[300],),
                         onPressed: ()async{
@@ -78,7 +102,7 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Instagram :",style: TextStyle(fontSize: 18),),
+                    Text("Instagram :",style: TextStyle(fontSize: 16),),
                     IconButton(
                         icon: Icon(MdiIcons.instagram,color: Colors.pink[500],),
                         onPressed: ()async{
@@ -94,7 +118,7 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Twitter :",style: TextStyle(fontSize: 18),),
+                    Text("Twitter       :",style: TextStyle(fontSize: 16),),
                     IconButton(
                         icon: Icon(MdiIcons.twitter,color: Colors.lightBlue,),
                         onPressed: ()async{
@@ -110,7 +134,7 @@ class _contactState extends State<contact> {
                 ),
                 Row(
                   children: <Widget>[
-                    Text("Facebook :",style: TextStyle(fontSize: 18),),
+                    Text("Facebook  :",style: TextStyle(fontSize: 16),),
                     IconButton(
                         icon: Icon(MdiIcons.facebook,color: Colors.indigo,),
                         onPressed: ()async{
@@ -130,14 +154,16 @@ class _contactState extends State<contact> {
           Card(
             child: ListTile(
                 title: Text('Developer\'s Profile',style: TextStyle(
-                  fontWeight: FontWeight.bold
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                  color: Colors.black
                 ),),
                 subtitle: Text("Click Here"),
                 onTap:() {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => contactme()),);}
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => contactme()),);
+                }
             ),
             elevation: 5,
-            color: Colors.white54,
           )
         ],
       ),
@@ -199,77 +225,51 @@ class _contactmeState extends State<contactme> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Developer\'s Profile"),
-        backgroundColor: Colors.deepOrangeAccent,
-      ),
-      body: Row(
-        children: <Widget>[
-          Padding(padding: EdgeInsets.only(top: 10),),
-          Container(
-            padding: EdgeInsets.only(top: 20),
-            width: 200,
-            height: 250,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.black,
-                width: 2
+      backgroundColor: Colors.deepOrangeAccent,),
+      body: Container(
+        padding: EdgeInsets.all(3),
+        height: 200,
+        decoration: BoxDecoration(border: Border.all(
+            color: Colors.black,
+            width: 1),
+        borderRadius: BorderRadius.circular(15),
+        ),
+        child: Column(
+          children: <Widget>[
+            Card(
+              child: ListTile(
+                  title: Text('\nDeveloper\'s Profile',style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Colors.black
+                  ),),
+                  subtitle: Text("     Ankit Kumar\n     IT, 2nd Year\n     Rajkiya Engineering College,Bijnor\n",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black
+                    ),),
+                  enabled: false,
               ),
-              image: DecorationImage(
-                image: AssetImage("assets/me.jpg"),
-                fit: BoxFit.cover
-              ),
-              borderRadius: BorderRadius.circular(10),
             ),
-          ),
-          Container(
-            padding: EdgeInsets.all(10),
-            width: 180,
-            height: 250,
-            decoration: BoxDecoration(
-                border: Border.all(
-                    color: Colors.black,
-                    width: 2
-                ),
-                borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
+            Row(
               children: <Widget>[
-                Padding(padding: EdgeInsets.all(10)),
-                Text("Ankit Kumar",style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600
-                ),),
-                Padding(padding: EdgeInsets.all(3)),
-                Text("IT 2nd Year",style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600
-                ),),
-                Padding(padding: EdgeInsets.all(5)),
-                Text("Rajkiya Engineering College, Bijnor",style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                ),),
-                Padding(padding: EdgeInsets.all(10)),
-                Text("Github Profile :",style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600
-                ),),
-               IconButton(
-                   icon: Icon(MdiIcons.github,size: 30),
-                   onPressed: ()async{
-                     const url = 'https://github.com/ankit595';
-                     if (await canLaunch(url)){
-                       await launch(url);
-                     }
-                     else{
-                       throw 'Could not launch $url';
-                     }
-                   })
+                Text("           Github Profile :",style: TextStyle(fontSize: 16),),
+                IconButton(
+                  icon: Icon(MdiIcons.github,size: 25,),
+                  onPressed: ()async{
+                    const url = 'https://github.com/ankit595';
+                    if (await canLaunch(url)){
+                     await launch(url);
+                   }
+                  else{
+                     throw 'Could not launch $url';
+                   }}
+                )
               ],
             )
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
-
