@@ -3,8 +3,10 @@
 A new Flutter Unit Coverter application.
 
 # Splash Screen
-
 ![Screenshot_1607914417](https://user-images.githubusercontent.com/56728798/102035144-b6e1f980-3de5-11eb-902a-ca274782f4e5.png)
+
+# HomeScreen
+![Screenshot_1607914336](https://user-images.githubusercontent.com/56728798/102035271-fb6d9500-3de5-11eb-8fec-bed44958c0db.png)
 
 
 ## Getting Started
