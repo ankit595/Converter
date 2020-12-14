@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'dart:async';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -30,10 +31,22 @@ class _contactState extends State<contact> {
             decoration: BoxDecoration(border: Border.all(color: Colors.black26,width: 1)),
           ),
           Container(
-            padding: const EdgeInsets.all(17),
-            child: Linkify(
-                onOpen: _onOpen,
-                text:"PlayStore : https://play.google.com/store/apps/details?id=com.feelthecoder.dsc"
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: <Widget>[
+                Text("Playstore :",style: TextStyle(fontSize: 18),),
+                IconButton(
+                    icon: Image(image: AssetImage("assets/playstore.jpg")),
+                    onPressed: ()async{
+                      const url = 'https://play.google.com/store/apps/details?id=com.feelthecoder.dsc';
+                      if (await canLaunch(url)){
+                        await launch(url);
+                      }
+                      else{
+                        throw 'Could not launch $url';
+                      }
+                    })
+              ],
             ),
           ),
           Container(
@@ -44,11 +57,74 @@ class _contactState extends State<contact> {
             decoration: BoxDecoration(border: Border.all(color: Colors.black26,width: 1)),
           ),
           Container(
-            padding: const EdgeInsets.all(20),
-            child: Linkify(
-                onOpen: _onOpen,
-                text:"BlogSpot : https://dscrecbijnor.blogspot.com/ \n\nInstagram : https://www.instagram.com/dscrecbijnor/"
-                    "\n\nTwitter : https://mobile.twitter.com/dscrec\n\nFacebook : https://www.facebook.com/dscrecbijnor/"
+            padding: EdgeInsets.only(left: 20),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Text("BlogSpot :",style: TextStyle(fontSize: 18),),
+                    IconButton(
+                        icon: Icon(MdiIcons.blogger,color: Colors.deepOrange[300],),
+                        onPressed: ()async{
+                          const url = 'https://dscrecbijnor.blogspot.com/';
+                          if (await canLaunch(url)){
+                            await launch(url);
+                          }
+                          else{
+                            throw 'Could not launch $url';
+                          }
+                        })
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Text("Instagram :",style: TextStyle(fontSize: 18),),
+                    IconButton(
+                        icon: Icon(MdiIcons.instagram,color: Colors.pink[500],),
+                        onPressed: ()async{
+                          const url = 'https://www.instagram.com/dscrecbijnor/';
+                          if (await canLaunch(url)){
+                            await launch(url);
+                          }
+                          else{
+                            throw 'Could not launch $url';
+                          }
+                        }),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Text("Twitter :",style: TextStyle(fontSize: 18),),
+                    IconButton(
+                        icon: Icon(MdiIcons.twitter,color: Colors.lightBlue,),
+                        onPressed: ()async{
+                          const url = 'https://mobile.twitter.com/dscrec';
+                          if (await canLaunch(url)){
+                            await launch(url);
+                          }
+                          else{
+                            throw 'Could not launch $url';
+                          }
+                        }),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    Text("Facebook :",style: TextStyle(fontSize: 18),),
+                    IconButton(
+                        icon: Icon(MdiIcons.facebook,color: Colors.indigo,),
+                        onPressed: ()async{
+                          const url = 'https://www.facebook.com/dscrecbijnor/';
+                          if (await canLaunch(url)){
+                            await launch(url);
+                          }
+                          else{
+                            throw 'Could not launch $url';
+                          }
+                        })
+                  ],
+                ),
+              ],
             ),
           ),
           Card(
@@ -66,13 +142,6 @@ class _contactState extends State<contact> {
         ],
       ),
     );
-  }
-  Future<void> _onOpen(LinkableElement link) async {
-    if (await canLaunch(link.url)) {
-      await launch(link.url);
-    } else {
-      throw 'Could not launch $link';
-    }
   }
 }
 
@@ -184,23 +253,23 @@ class _contactmeState extends State<contactme> {
                     fontSize: 16,
                     fontWeight: FontWeight.w600
                 ),),
-                Linkify(
-                    onOpen: _onOpen,
-                    text:"https://github.com/ankit595"
-                ),
+               IconButton(
+                   icon: Icon(MdiIcons.github,size: 30),
+                   onPressed: ()async{
+                     const url = 'https://github.com/ankit595';
+                     if (await canLaunch(url)){
+                       await launch(url);
+                     }
+                     else{
+                       throw 'Could not launch $url';
+                     }
+                   })
               ],
             )
           ),
         ],
       ),
     );
-  }
-  Future<void> _onOpen(LinkableElement link) async {
-    if (await canLaunch(link.url)) {
-      await launch(link.url);
-    } else {
-      throw 'Could not launch $link';
-    }
   }
 }
 
