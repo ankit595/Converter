@@ -1,6 +1,6 @@
-# converter
+# Converter
 
-A new Flutter application.
+A new Flutter Unit Coverter application.
 
 ## Getting Started
 
