@@ -147,20 +147,20 @@ class _HomePageState extends State<HomePage> {
                 barrierDismissible: false,
                 context: context,
                 builder: (context) => AlertDialog(
-                      title: Text('Are you sure?'),
-                      content: Text('Do you want to exit app'),
-                      actions: <Widget>[
-                        FlatButton(
-                          onPressed: () => Navigator.of(context).pop(false),
-                          child: Text('No'),
-                        ),
-                        FlatButton(
-                          onPressed: () => exit(0),
-                          /*Navigator.of(context).pop(true)*/
-                          child: Text('Yes'),
-                        ),
-                      ],
-                    ));
+                  title: Text('Are you sure?'),
+                  content: Text('Do you want to exit app'),
+                  actions: <Widget>[
+                    FlatButton(
+                      onPressed: () => Navigator.of(context).pop(false),
+                      child: Text('No'),
+                    ),
+                    FlatButton(
+                      onPressed: () => exit(0),
+                      /*Navigator.of(context).pop(true)*/
+                      child: Text('Yes'),
+                    ),
+                  ],
+                ));
             // exits the app
           }
         },

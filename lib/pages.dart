@@ -153,7 +153,7 @@ class _contactState extends State<contact> {
           ),
           Card(
             child: ListTile(
-                title: Text('Developer\'s Profile',style: TextStyle(
+                title: Text('Developer Profile',style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
                   color: Colors.black
@@ -200,7 +200,6 @@ class _feedbackState extends State<feedback> {
                 text:"Feedback Form : https://forms.gle/mKbWE8SVsyj5mkQY9"
             ),
           ),
-
         ],
       ),
     );
@@ -209,7 +208,7 @@ class _feedbackState extends State<feedback> {
     if (await canLaunch(link.url)) {
       await launch(link.url);
     } else {
-      throw 'Could not launch $link';
+      throw 'Could not   launch $link';
     }
   }
 }
@@ -224,11 +223,11 @@ class _contactmeState extends State<contactme> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Developer\'s Profile"),
+        title: Text("Developer Profile"),
       backgroundColor: Colors.deepOrangeAccent,),
       body: Container(
         padding: EdgeInsets.all(3),
-        height: 200,
+        height: 300,
         decoration: BoxDecoration(border: Border.all(
             color: Colors.black,
             width: 1),
@@ -238,17 +237,15 @@ class _contactmeState extends State<contactme> {
           children: <Widget>[
             Card(
               child: ListTile(
-                  title: Text('\nDeveloper\'s Profile',style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.black
+                title: Text("Ankit Kumar",style: TextStyle(
+                    color: Colors.black87
+                ),),
+                subtitle: Text("    IT, 2nd Year\n     Rajkiya Engineering College,Bijnor\n",
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black54
                   ),),
-                  subtitle: Text("     Ankit Kumar\n     IT, 2nd Year\n     Rajkiya Engineering College,Bijnor\n",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black54
-                    ),),
-                  enabled: false,
+                enabled: false,
               ),
             ),
             Row(
@@ -264,6 +261,35 @@ class _contactmeState extends State<contactme> {
                   else{
                      throw 'Could not launch $url';
                    }}
+                )
+              ],
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Vipul Kumar",style: TextStyle(
+                  color: Colors.black87
+                ),),
+                subtitle: Text("     IT, 2nd Year\n     Rajkiya Engineering College,Bijnor\n",
+                  style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.black54
+                  ),),
+                enabled: false,
+              ),
+            ),
+            Row(
+              children: <Widget>[
+                Text("           Github Profile :",style: TextStyle(fontSize: 16,color: Colors.black54),),
+                IconButton(
+                    icon: Icon(MdiIcons.github,size: 25,),
+                    onPressed: ()async{
+                      const url = 'https://github.com/ankit595';
+                      if (await canLaunch(url)){
+                        await launch(url);
+                      }
+                      else{
+                        throw 'Could not launch $url';
+                      }}
                 )
               ],
             )
