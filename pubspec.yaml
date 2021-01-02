@@ -26,7 +26,7 @@ dependencies:
   flutter_linkify: ^4.0.2
   url_launcher: ^5.7.10
   flutter_launcher_icons: ^0.8.1
-
+  material_design_icons_flutter: ^4.0.5755
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
@@ -53,6 +53,7 @@ flutter:
   assets:
       - assets/converter.png
       - assets/me.jpg
+      - assets/playstore.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
